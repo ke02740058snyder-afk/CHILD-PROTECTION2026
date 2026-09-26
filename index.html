@@ -1,0 +1,429 @@
+<!DOCTyPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Protection: Safeguarding Our Future</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --primary-color: #1e3a8a; /* Deep Trust Blue */
+            --secondary-color: #3b82f6; /* Lighter Blue */
+            --accent-color: #dc2626; /* Urgent Red */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* --- EMERGENCY BANNER --- */
+        .emergency-banner {
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-align: center;
+            padding: 0.8rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .emergency-banner a {
+            color: var(--white);
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-danger {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* --- MAIN CONTENT SECTIONS --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+            color: #64748b;
+        }
+
+        /* --- SIGNS OF ABUSE GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary-color);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- ACTION STEPS --- */
+        .action-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+        }
+
+        .steps li {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 2rem;
+            counter-increment: step-counter;
+        }
+
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .steps h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        /* --- RESOURCES / CONTACT --- */
+        .resources {
+            background-color: #eff6ff;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #dbeafe;
+        }
+
+        .contact-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .phone-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #cbd5e1;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 15px; }
+            .container { padding: 2rem 1rem; }
+            .action-section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Emergency Top Banner -->
+    <div class="emergency-banner">
+        🚨 If a child is in immediate danger, call your local emergency services (e.g., 911) immediately. 
+        <a href="#resources">View Helplines</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>🛡️</span> SafeChild Initiative
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#signs">Signs of Abuse</a></li>
+                    <li><a href="#action">What to Do</a></li>
+                    <li><a href="#resources">Resources</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Every Child Deserves a Safe Childhood</h1>
+        <p>Child protection is everyone's responsibility. Together, we can recognize the signs, take action, and build a safer world for the vulnerable children in our communities.</p>
+        <a href="#action" class="btn btn-primary">Learn How to Help</a>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2 class="section-title">What is Child Protection?</h2>
+            <p class="section-subtitle">Child protection refers to the policies, laws, and actions designed to safeguard children from violence, exploitation, abuse, and neglect. It ensures that every child has the right to grow up in a safe, nurturing, and supportive environment.</p>
+        </section>
+
+        <!-- Signs of Abuse Section -->
+        <section id="signs" class="container">
+            <h2 class="section-title">Recognizing the Signs</h2>
+            <p class="section-subtitle">Abuse isn't always visible. Knowing the warning signs can help you intervene and save a life. Look out for these indicators:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🩹</div>
+                    <h3>Physical Abuse</h3>
+                    <p>Unexplained bruises, burns, or fractures. The child may be wary of physical contact, flinch easily, or wear inappropriate clothing to hide injuries.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💔</div>
+                    <h3>Emotional Abuse</h3>
+                    <p>Extreme behaviors (overly compliant or aggressive), delayed development, sudden speech disorders, or appearing excessively fearful, anxious, or withdrawn.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚸</div>
+                    <h3>Sexual Abuse</h3>
+                    <p>Age-inappropriate sexual knowledge, sudden changes in eating or sleeping, avoidance of specific people or places, or unexplained pain/infections.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🍽️</div>
+                    <h3>Neglect</h3>
+                    <p>Frequent absences from school, poor hygiene, untreated medical/dental issues, or being left unsupervised in dangerous situations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Steps Section -->
+        <section id="action" class="container">
+            <div class="action-section">
+                <h2 class="section-title">What to Do If You Suspect Abuse</h2>
+                <p class="section-subtitle" style="margin-bottom: 2rem;">If you believe a child is being harmed, do not wait. Follow these steps to ensure their safety:</p>
+                
+                <ol class="steps">
+                    <li>
+                        <h4>Ensure Immediate Safety</h4>
+                        <p>If the child is in immediate danger, call emergency services (911 or your local equivalent) right away. Do not confront the suspected abuser yourself.</p>
+                    </li>
+                    <li>
+                        <h4>Listen and Reassure</h4>
+                        <p>If a child discloses abuse to you, stay calm. Listen without interrupting, believe them, and reassure them that it is not their fault and you are there to help.</p>
+                    </li>
+                    <li>
+                        <h4>Document What You Know</h4>
+                        <p>Write down exactly what was said or observed, including dates, times, and specific details. Stick to the facts without adding your own interpretations.</p>
+                    </li>
+                    <li>
+                        <h4>Report It</h4>
+                        <p>Contact your local child protective services or a dedicated child abuse hotline. You do not need absolute proof to make a report; it is the job of professionals to investigate.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources container">
+            <h2 class="section-title">Get Help & Report Abuse</h2>
+            <p class="section-subtitle">You are not alone. Reach out to these confidential, free resources for guidance, support, and reporting.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>🚨 Emergency Services</h3>
+                    <p>For immediate life-threatening danger.</p>
+                    <span class="phone-number">911</span>
+                    <small>(Or your local emergency number)</small>
+                </div>
+                <div class="contact-card">
+                    <h3>📞 Childhelp National Hotline</h3>
+                    <p>Professional counselors available 24/7 in over 170 languages.</p>
+                    <span class="phone-number">1-800-422-4453</span>
+                    <small>(US & Canada)</small>
+                </div>
+                <div class="contact-card">
+                    <h3>🌍 Local Child Services</h3>
+                    <p>Connect with your regional department of social services for local reporting and family support.</p>
+                    <a href="#" class="btn btn-danger" style="margin-top: 15px; font-size: 0.9rem;">Find Local Agency</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SafeChild Initiative. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">
+            <em>Disclaimer: This website is for informational purposes only and does not constitute legal or medical advice. 
+            If you suspect child abuse, please contact local authorities or a professional hotline immediately.</em>
+        </p>
+    </footer>
+
+</body>
+</html>
